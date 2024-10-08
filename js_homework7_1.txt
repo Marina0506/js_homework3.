@@ -1,0 +1,25 @@
+// Створюємо об'єкт з трьома властивостями
+let obj = {
+    name: 'Телефон',
+    type: 'Apple',
+    price: 1000,
+    
+    // Метод getInfo виводить всі властивості об'єкта
+    getInfo: function() {
+        for (let key in this) {
+            // Перевіряємо, чи властивість є безпосередньо власною
+            if (this.hasOwnProperty(key) && typeof this[key] !== 'function') {
+                console.log(key + ": " + this[key]);
+            }
+        }
+    }
+};
+
+// Викликаємо метод для виведення інформації про об'єкт
+obj.getInfo(); // Виведе name, type, price
+
+// Нова властивість об'єкта
+obj.newProperty = 'Model 15 pro';
+
+// Всі властивості, включаючи нову
+obj.getInfo(); // Виведе всі властивості, включаючи newProperty
